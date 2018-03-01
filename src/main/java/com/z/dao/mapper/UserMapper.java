@@ -56,4 +56,8 @@ public interface UserMapper {
     User userLogin(@Param("username") String username,@Param("password") String password);
 
     float retrieveUserBalance(@Param("userId") int userId);
+
+    void setUserImage(@Param("userId") int userId,@Param("url") String url);
+
+    String getUserImage(@Param("userId")int userId);
 }

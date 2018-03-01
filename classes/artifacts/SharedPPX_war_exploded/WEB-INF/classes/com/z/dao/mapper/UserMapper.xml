@@ -237,4 +237,18 @@
       FROM USER
       WHERE id =#{userId,jdbcType=INTEGER}
   </select>
+
+  <!--根据ID设置用户头像-->
+  <update id="setUserImage">
+    UPDATE USER
+    SET image=#{url}
+    WHERE id=#{userId}
+  </update>
+
+  <!--根据ID查询用户头像-->
+  <select id="getUserImage" resultType="java.lang.String">
+      SELECT image
+      FROM USER
+      WHERE id=#{userId}
+  </select>
 </mapper>

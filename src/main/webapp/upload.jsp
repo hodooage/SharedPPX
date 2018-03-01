@@ -13,6 +13,7 @@
 </head>
 <body>
     <form action="uploadImage" method="post" enctype="multipart/form-data">
+        用户ＩＤ：<input type="text" name="userId" ><br>
         选择图片：<input type="file" name="image" accept="image/*"/><br>
         <input type="submit" value="上传">
     </form>

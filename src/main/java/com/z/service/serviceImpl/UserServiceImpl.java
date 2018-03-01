@@ -11,6 +11,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
 
+
+
     @Override
     public User userLogin(String username, String password) {
         System.out.println(userMapper);
@@ -26,4 +28,15 @@ public class UserServiceImpl implements UserService {
     public float retrieveUserBalance(int userId) {
         return userMapper.retrieveUserBalance(userId);
     }
+
+    @Override
+    public void setUserImage(int userId, String url) {
+        userMapper.setUserImage(userId,url);
+    }
+
+    @Override
+    public String getUserImage(int userId) {
+        return userMapper.getUserImage(userId);
+    }
+
 }
