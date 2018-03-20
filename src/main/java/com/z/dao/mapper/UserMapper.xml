@@ -157,6 +157,8 @@
       </if>
     </trim>
   </insert>
+
+  <!--根据用户对象修改用户资料-->
   <update id="updateByPrimaryKeySelective" parameterType="com.z.pojo.User" >
     <!--
       WARNING - @mbggenerated
@@ -251,4 +253,7 @@
       FROM USER
       WHERE id=#{userId}
   </select>
+
+
+
 </mapper>

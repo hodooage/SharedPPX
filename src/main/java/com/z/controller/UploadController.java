@@ -38,7 +38,8 @@ public class UploadController {
 
 
         int userId=Integer.parseInt(request.getParameter("userId"));
-        String imageUrl= ServiceUrl.IP
+        String imageUrl= ServiceUrl.PROTOCOL
+                +"://"+ServiceUrl.IP
                 +":"+ServiceUrl.PORT
                 +"/"+ServiceUrl.PROJECTNAME
                 +"/"+ServiceUrl.IMAGEFILEPACKAGE

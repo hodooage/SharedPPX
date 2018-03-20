@@ -1,5 +1,6 @@
 package com.z.controller;
 
+import com.z.pojo.User;
 import com.z.service.UserService;
 import com.z.utils.JsonResponseData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,15 @@ public class UserController {
     @RequestMapping("/retrieveUserBalance")
     @ResponseBody
     public String retrieveUserBalance(int userId){
+        System.out.println("查询了ID为"+userId+"的余额");
         return  new JsonResponseData(true,"retrieve success",1,"查询成功",userService.retrieveUserBalance(userId)).toString();
     }
 
+    @RequestMapping(value = "/editUserInformation",method = RequestMethod.POST)
+    @ResponseBody
+    public String editUserInformation(User user){
+
+        return new JsonResponseData(true,"edit success",1,"修改成功",userService.editUserInformation(user)).toString();
+    }
 
 }

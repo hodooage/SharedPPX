@@ -39,4 +39,9 @@ public class UserServiceImpl implements UserService {
         return userMapper.getUserImage(userId);
     }
 
+    @Override
+    public int editUserInformation(User user) {
+        return userMapper.updateByPrimaryKeySelective(user);
+    }
+
 }

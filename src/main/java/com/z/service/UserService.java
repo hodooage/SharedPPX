@@ -14,4 +14,5 @@ public interface UserService {
 
     String getUserImage(int userId);
 
+    int editUserInformation(User user);
 }
