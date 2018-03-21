@@ -23,7 +23,7 @@ public class UploadController {
     @RequestMapping("/uploadImage")
     @ResponseBody
     public String uploadImage(HttpServletRequest request, UploadImageFile file) throws IOException {
-        System.out.println(request.getParameter("userId"));
+        System.out.println("收到上传请求：ID"+request.getParameter("userId"));
 
         String name=RandomStringUtils.randomAlphabetic(10);
         String newFileName=name+".jpg";
