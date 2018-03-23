@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.IOException;
 
 @Controller
+@RequestMapping(value = "/client",produces = "text/plain;charset=utf-8")
 public class UploadController {
     @Autowired
     UserService userService;
@@ -24,12 +25,12 @@ public class UploadController {
     @ResponseBody
     public String uploadImage(HttpServletRequest request, UploadImageFile file) throws IOException {
         System.out.println("收到上传请求：ID"+request.getParameter("userId"));
-
         String name=RandomStringUtils.randomAlphabetic(10);
         String newFileName=name+".jpg";
         File newFile=new File(request.getServletContext().getRealPath("/images"),newFileName);
         newFile.getParentFile().mkdirs();
         file.getImage().transferTo(newFile);
+        System.out.println(newFile);
         ModelAndView mav=new ModelAndView("showUploadImage");
         mav.addObject("imageName",newFileName);
 

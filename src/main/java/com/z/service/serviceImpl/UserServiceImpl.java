@@ -11,8 +11,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
 
-
-
     @Override
     public User userLogin(String username, String password) {
         System.out.println(userMapper);
@@ -20,7 +18,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserByID(int userId) {
+    public User getUserById(int userId) {
         return userMapper.selectByPrimaryKey(userId);
     }
 

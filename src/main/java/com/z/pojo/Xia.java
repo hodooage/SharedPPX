@@ -192,4 +192,16 @@ public class Xia {
     public void setState(Integer state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return "Xia{" +
+                "id=" + id +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", price=" + price +
+                ", type=" + type +
+                ", state=" + state +
+                '}';
+    }
 }
