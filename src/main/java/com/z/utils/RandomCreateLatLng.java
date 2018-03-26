@@ -23,7 +23,6 @@ public class RandomCreateLatLng {
         //经度最大最小值
         double maxX=lng+0.01141/2;
         double minX=lng-0.01141/2;
-
         //纬度最大最小值
         double maxY=lat+0.00899/2;
         double minY=lat-0.00899/2;
@@ -42,6 +41,24 @@ public class RandomCreateLatLng {
             xiaList.add(xia);
         }
         return xiaList;
+    }
+
+    private static  void getArea(double lng,double lat){
+        //经度最大最小值
+        double maxLng=lng+0.01141/2;
+        double minLng=lng-0.01141/2;
+        //纬度最大最小值
+        double maxLat=lat+0.00899/2;
+        double minLat=lat-0.00899/2;
+
+        System.out.println("maxLng"+maxLng);
+        System.out.println("minLng"+minLng);
+        System.out.println("maxLat"+maxLat);
+        System.out.println("minLat"+minLat);
+    }
+
+    public static void main(String[] args) {
+        getArea(109.943427,27.530085);
     }
 
 }

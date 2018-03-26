@@ -1,6 +1,9 @@
 package com.z.dao.mapper;
 
 import com.z.pojo.Xia;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface XiaMapper {
     /**
@@ -50,4 +53,10 @@ public interface XiaMapper {
      * @mbggenerated Tue Feb 06 14:54:22 CST 2018
      */
     int updateByPrimaryKey(Xia record);
+
+    List<Xia> getNearByEnableXia(@Param("minLng") double minLng,@Param("maxLng") double maxLng, @Param("minLat")double minLat, @Param("maxLat")double maxLat);
+
+    int startXiaById(@Param("xiaId") int xiaId);
+
+    int stopXiaById(@Param("xiaId") int xiaId);
 }

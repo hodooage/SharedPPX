@@ -10,6 +10,7 @@ public class JsonResponseData {
     private static Gson gson=new GsonBuilder().create();
 
     public JsonResponseData() {
+
     }
 
     public JsonResponseData(Boolean ret, String msg, int code, String message, Object data) {

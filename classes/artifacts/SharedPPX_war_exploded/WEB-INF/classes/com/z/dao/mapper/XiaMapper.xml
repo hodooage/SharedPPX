@@ -141,4 +141,14 @@
       state = #{state,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="getNearByEnableXia" resultType="com.z.pojo.Xia">
+    SELECT *
+    FROM xia
+    WHERE latitude	&gt; #{minLat}
+    AND latitude &lt; #{maxLat}
+    AND longitude &gt; #{minLng}
+    AND longitude &lt; #{maxLng}
+    AND state = 0
+  </select>
 </mapper>
