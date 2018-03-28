@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
+@RequestMapping("/client")
 public class XiaController {
     @Autowired
     XiaService xiaService;
@@ -29,6 +30,7 @@ public class XiaController {
     @RequestMapping("/getNearByEnableXia")
     @ResponseBody
     public String getNearByEnableXia(double lng,double lat){
+        System.out.println("查询"+lng+","+lat+"附近可用的车");
         //经度最大最小值
         double maxLng=lng+0.01141/2;
         double minLng=lng-0.01141/2;
