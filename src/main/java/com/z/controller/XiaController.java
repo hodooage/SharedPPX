@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping("/client")
+@RequestMapping(value = "/client",produces = "text/plain;charset=utf-8")
 public class XiaController {
     @Autowired
     XiaService xiaService;
@@ -45,6 +45,7 @@ public class XiaController {
     @RequestMapping("/getXiaById")
     @ResponseBody
     public String getXiaById(int xiaId){
+        System.out.println("查询ID为"+xiaId+"的虾信息");
         Xia xia=xiaService.getXiaById(xiaId);
         return new JsonResponseData(true,"retrieve success",1,"查询成功",xia).toString();
     }

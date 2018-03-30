@@ -37,6 +37,4 @@ public class XiaServiceImpl  implements XiaService{
     public int stopXiaById(int xiaId) {
         return xiaMapper.stopXiaById(xiaId);
     }
-
-
 }

@@ -151,4 +151,17 @@
     AND longitude &lt; #{maxLng}
     AND state = 0
   </select>
+
+  <update id="startXiaById">
+    UPDATE xia
+    SET state=1
+    WHERE id=#{xiaId}
+  </update>
+
+  <update id="stopXiaById">
+    UPDATE xia
+    SET state=0
+    WHERE id=#{xiaId}
+  </update>
+
 </mapper>
