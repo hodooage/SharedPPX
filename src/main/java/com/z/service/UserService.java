@@ -15,4 +15,6 @@ public interface UserService {
     String getUserImage(int userId);
 
     int editUserInformation(User user);
+
+    int changeUserBalance(int userId,double newBalance);
 }

@@ -43,8 +43,14 @@ public class UseRecordController {
         useRecordService.insertNewUseRecord(thisUseRecord);
         System.out.println("插入后主键ID为"+thisUseRecord.getId());
 
-        return new JsonResponseData(false,"create useRecord Success",1,"创建订单成功",thisUseRecord).toString();
+        return new JsonResponseData(true,"create useRecord Success",1,"创建订单成功",thisUseRecord).toString();
     }
 
+    //骑行结束更新骑行记录
+    @RequestMapping("/updateUseRecord")
+    @ResponseBody
+    public String updateUseRecord(int userId,String stopTime,String stopSite,double totalMoney){
+        return null;
+    }
 
 }

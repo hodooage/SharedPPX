@@ -60,4 +60,6 @@ public interface UserMapper {
     void setUserImage(@Param("userId") int userId,@Param("url") String url);
 
     String getUserImage(@Param("userId")int userId);
+
+    int changeUserBalance(@Param("userId")int userId,@Param("newBalance") double newBalance);
 }

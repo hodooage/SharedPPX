@@ -46,4 +46,22 @@ public class UserController {
         return new JsonResponseData(true,"edit success",1,"修改成功",userService.editUserInformation(user)).toString();
     }
 
+    @RequestMapping("/reduceUserBalance")
+    @ResponseBody
+    public String reduceUserBalance(int userId,double totalMoney){
+        double nowBalance=userService.retrieveUserBalance(userId);
+        double newBalance=nowBalance-totalMoney;
+        if (newBalance>=0){
+            return new JsonResponseData(true,"reduce success",1,"扣款成功",userService.changeUserBalance(userId,newBalance)).toString();
+        }
+        return new JsonResponseData(false,"reduce fail",1,"扣款失败","余额不足,请充值后再结束订单,当前余额"+nowBalance+",需要"+totalMoney).toString();
+    }
+
+    @RequestMapping("/addUserBalance")
+    @ResponseBody
+    public String addUserBalance(int userId,double totalMoney){
+        double nowBalance=userService.retrieveUserBalance(userId);
+        double newBalance=nowBalance+totalMoney;
+        return new JsonResponseData(true,"add success",1,"充值成功",userService.changeUserBalance(userId,newBalance)).toString();
+    }
 }

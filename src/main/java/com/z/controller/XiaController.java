@@ -54,17 +54,17 @@ public class XiaController {
     @ResponseBody
     public String startXiaById(int xiaId){
         if(xiaService.startXiaById(xiaId)!=0){
-            return new JsonResponseData(true,"retrieve success",1,"修改成功","状态已修改为1").toString();
+            return new JsonResponseData(true,"change success",1,"修改成功","状态已修改为1").toString();
         }
-        return new JsonResponseData(false,"retrieve fail",1,"修改失败","状态未更改").toString();
+        return new JsonResponseData(false,"change fail",1,"修改失败","状态未更改").toString();
     }
 
     @RequestMapping("/stopXiaById")
     @ResponseBody
     public String stopXiaById(int xiaId){
         if(xiaService.stopXiaById(xiaId)!=0){
-            return new JsonResponseData(true,"retrieve success",1,"修改成功","状态已修改为0").toString();
+            return new JsonResponseData(true,"change success",1,"修改成功","状态已修改为0").toString();
         }
-        return new JsonResponseData(false,"retrieve fail",1,"修改失败","状态未更改").toString();
+        return new JsonResponseData(false,"change fail",1,"修改失败","状态未更改").toString();
     }
 }

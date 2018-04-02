@@ -42,4 +42,9 @@ public class UserServiceImpl implements UserService {
         return userMapper.updateByPrimaryKeySelective(user);
     }
 
+    @Override
+    public int changeUserBalance(int userId, double newBalance) {
+        return userMapper.changeUserBalance(userId,newBalance);
+    }
+
 }
