@@ -12,7 +12,17 @@ public class UseRecordServiceImpl implements UseRecordService{
     UseRecordMapper useRecordMapper;
 
     @Override
+    public UseRecord getUseRecordById(int useRecordId) {
+        return useRecordMapper.selectByPrimaryKey(useRecordId);
+    }
+
+    @Override
     public int insertNewUseRecord(UseRecord useRecord) {
         return useRecordMapper.insertSelective(useRecord);
+    }
+
+    @Override
+    public int updateUseRecord(UseRecord useRecord) {
+        return useRecordMapper.updateByPrimaryKeySelective(useRecord);
     }
 }

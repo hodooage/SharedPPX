@@ -17,12 +17,6 @@
         <javaClientGenerator targetPackage="com.z.dao.mapper" targetProject="E:\SharedPPX\src\main\java" type="XMLMAPPER" >
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
-        <table tableName="user" domainObjectName="User" enableCountByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="xia" domainObjectName="Xia" enableCountByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
         <table tableName="userecord" domainObjectName="UseRecord" enableCountByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false"/>

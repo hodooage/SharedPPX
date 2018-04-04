@@ -49,6 +49,7 @@ public class UserController {
     @RequestMapping("/reduceUserBalance")
     @ResponseBody
     public String reduceUserBalance(int userId,double totalMoney){
+        System.out.println("接收到扣钱请求");
         double nowBalance=userService.retrieveUserBalance(userId);
         double newBalance=nowBalance-totalMoney;
         if (newBalance>=0){
@@ -60,6 +61,7 @@ public class UserController {
     @RequestMapping("/addUserBalance")
     @ResponseBody
     public String addUserBalance(int userId,double totalMoney){
+        System.out.println("接收到充钱请求");
         double nowBalance=userService.retrieveUserBalance(userId);
         double newBalance=nowBalance+totalMoney;
         return new JsonResponseData(true,"add success",1,"充值成功",userService.changeUserBalance(userId,newBalance)).toString();

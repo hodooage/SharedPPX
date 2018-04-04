@@ -53,6 +53,7 @@ public class XiaController {
     @RequestMapping("/startXiaById")
     @ResponseBody
     public String startXiaById(int xiaId){
+        System.out.println(xiaId+"号虾被启动了");
         if(xiaService.startXiaById(xiaId)!=0){
             return new JsonResponseData(true,"change success",1,"修改成功","状态已修改为1").toString();
         }
@@ -62,6 +63,7 @@ public class XiaController {
     @RequestMapping("/stopXiaById")
     @ResponseBody
     public String stopXiaById(int xiaId){
+        System.out.println(xiaId+"号虾停下了");
         if(xiaService.stopXiaById(xiaId)!=0){
             return new JsonResponseData(true,"change success",1,"修改成功","状态已修改为0").toString();
         }

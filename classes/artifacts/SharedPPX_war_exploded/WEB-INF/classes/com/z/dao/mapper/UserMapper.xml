@@ -254,6 +254,11 @@
       WHERE id=#{userId}
   </select>
 
-
+  <!--根据ID和金额更改余额-->
+  <update id="changeUserBalance">
+    UPDATE USER
+    SET balance = #{newBalance}
+    WHERE id = #{userId}
+  </update>
 
 </mapper>

@@ -255,7 +255,7 @@
   </select>
 
   <!--根据ID和金额更改余额-->
-  <update id="changeBalance">
+  <update id="changeUserBalance">
     UPDATE USER
     SET balance = #{newBalance}
     WHERE id = #{userId}
