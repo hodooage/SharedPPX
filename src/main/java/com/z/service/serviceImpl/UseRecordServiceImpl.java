@@ -25,4 +25,9 @@ public class UseRecordServiceImpl implements UseRecordService{
     public int updateUseRecord(UseRecord useRecord) {
         return useRecordMapper.updateByPrimaryKeySelective(useRecord);
     }
+
+    @Override
+    public UseRecord checkRunningOrder(int userId) {
+        return useRecordMapper.checkRunningOrder(userId);
+    }
 }

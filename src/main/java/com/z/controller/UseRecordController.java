@@ -56,8 +56,6 @@ public class UseRecordController {
     public String updateUseRecord(int useRecordId,String stopSite,String duration, double totalMoney){
         UseRecord useRecord=useRecordService.getUseRecordById(useRecordId);
 
-
-
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String stopTime=sdf.format(new Date());
 
@@ -79,6 +77,15 @@ public class UseRecordController {
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println("获取到系统时间");
         return new JsonResponseData(true,"get System Time Success",1,"获取系统时间成功",sdf.format(new Date())).toString();
+    }
+
+    @RequestMapping("/checkRunningOrder")
+    @ResponseBody
+    public String checkRunningOrder(int userId){
+        System.out.println("检查用户ID"+userId+"正在骑行的订单");
+        UseRecord useRecord=useRecordService.checkRunningOrder(userId);
+        System.out.println("查到的订单详细信息为："+useRecord.toString());
+        return new JsonResponseData(true,"retrieved an  running order ",1,"查询到一个正在骑行的订单",useRecord).toString();
     }
 
 }

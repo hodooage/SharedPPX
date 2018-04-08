@@ -8,4 +8,6 @@ public interface UseRecordService {
     int insertNewUseRecord(UseRecord useRecord);
 
     int updateUseRecord(UseRecord useRecord);
+
+    UseRecord checkRunningOrder(int userId);
 }

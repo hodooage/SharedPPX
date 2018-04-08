@@ -352,4 +352,21 @@ public class UseRecord {
     public void setState(Integer state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return "UseRecord{" +
+                "id=" + id +
+                ", startsite='" + startsite + '\'' +
+                ", stopsite='" + stopsite + '\'' +
+                ", starttime='" + starttime + '\'' +
+                ", stoptime='" + stoptime + '\'' +
+                ", duration='" + duration + '\'' +
+                ", price=" + price +
+                ", totalmoney=" + totalmoney +
+                ", uId=" + uId +
+                ", xId=" + xId +
+                ", state=" + state +
+                '}';
+    }
 }

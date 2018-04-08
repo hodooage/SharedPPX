@@ -1,6 +1,7 @@
 package com.z.dao.mapper;
 
 import com.z.pojo.UseRecord;
+import org.apache.ibatis.annotations.Param;
 
 public interface UseRecordMapper {
     /**
@@ -50,4 +51,6 @@ public interface UseRecordMapper {
      * @mbggenerated Wed Apr 04 10:43:47 CST 2018
      */
     int updateByPrimaryKey(UseRecord record);
+
+    UseRecord checkRunningOrder(@Param("userId") int userId);
 }

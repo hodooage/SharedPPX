@@ -204,4 +204,13 @@
       state = #{state,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <!--根据用户ID查询当前存在的订单-->
+  <select id="checkRunningOrder" resultMap="BaseResultMap">
+    SELECT *
+    FROM userecord
+    WHERE u_id=#{userId}
+    AND state=0
+  </select>
+
 </mapper>
