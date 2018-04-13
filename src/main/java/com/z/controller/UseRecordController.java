@@ -83,9 +83,13 @@ public class UseRecordController {
     @ResponseBody
     public String checkRunningOrder(int userId){
         System.out.println("检查用户ID"+userId+"正在骑行的订单");
-        UseRecord useRecord=useRecordService.checkRunningOrder(userId);
-        System.out.println("查到的订单详细信息为："+useRecord.toString());
-        return new JsonResponseData(true,"retrieved an  running order ",1,"查询到一个正在骑行的订单",useRecord).toString();
+        UseRecord useRecord;
+        if(useRecordService.checkRunningOrder(userId)!=null){
+            useRecord=useRecordService.checkRunningOrder(userId);
+            System.out.println("查到的订单详细信息为："+useRecord.toString());
+            return new JsonResponseData(true,"retrieved an  running order ",1,"查询到一个正在骑行的订单",useRecord).toString();
+        }
+        return new JsonResponseData(false,"no running order ",1,"没有正在骑行的订单",null).toString();
     }
 
 }
