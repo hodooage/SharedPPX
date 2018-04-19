@@ -213,4 +213,11 @@
     AND state=0
   </select>
 
+  <select id="getUseRecordByUserId" resultMap="BaseResultMap">
+    SELECT startTime,duration,totalMoney,x_id
+    FROM userecord
+    WHERE u_id=#{userId}
+    AND state=1
+  </select>
+
 </mapper>

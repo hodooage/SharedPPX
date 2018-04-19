@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 @RequestMapping(value = "/client",produces = "text/plain;charset=utf-8")
@@ -90,6 +91,18 @@ public class UseRecordController {
             return new JsonResponseData(true,"retrieved an  running order ",1,"查询到一个正在骑行的订单",useRecord).toString();
         }
         return new JsonResponseData(false,"no running order ",1,"没有正在骑行的订单",null).toString();
+    }
+
+    //根据用户ID获取骑行记录
+    @RequestMapping("/getUseRecordByUserId")
+    @ResponseBody
+    public String getUseRecordByUserId(int userId){
+        System.out.println("查询用户"+userId+"的骑行记录");
+        List<UseRecord> useRecordList=useRecordService.getUseRecordByUserId(userId);
+        if(useRecordList!=null){
+            return new JsonResponseData(true,"find some order ",1,"查到这些订单记录",useRecordList).toString();
+        }
+        return new JsonResponseData(false,"no  order ",0,"没有查询到订单记录",null).toString();
     }
 
 }

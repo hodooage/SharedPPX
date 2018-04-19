@@ -41,7 +41,7 @@ public class UserController {
     @ResponseBody
     public String editUserInformation(@RequestBody User user){
         System.out.println("接收到用户"+user.getId()+"修改个人信息的请求");
-//        user.setId(user.getUid());
+        //user.setId(user.getUid());
         System.out.println(user.toString());
         return new JsonResponseData(true,"edit success",1,"修改成功",userService.editUserInformation(user)).toString();
     }

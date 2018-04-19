@@ -6,6 +6,8 @@ import com.z.service.UseRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UseRecordServiceImpl implements UseRecordService{
     @Autowired
@@ -29,5 +31,10 @@ public class UseRecordServiceImpl implements UseRecordService{
     @Override
     public UseRecord checkRunningOrder(int userId) {
         return useRecordMapper.checkRunningOrder(userId);
+    }
+
+    @Override
+    public List<UseRecord> getUseRecordByUserId(int userId) {
+        return useRecordMapper.getUseRecordByUserId(userId);
     }
 }
